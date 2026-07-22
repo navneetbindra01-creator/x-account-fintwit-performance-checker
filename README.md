@@ -1,5 +1,7 @@
 # X Account Fintwit performance checker
 
+Ever wondered if a fin-twitter account has a sound track record? Or would you like to save yourself time and extract a list of all trade/investment recommendations from the last month from a particular account? This program will extract all tickers, the date/time, and whether the implied tweet is a suggestive Long/Short/Neutral position. The program will display these actions on the underlying ticker price chart.
+
 Analyze FinTwit (finance Twitter/X) accounts: scrape tweets, extract tickers (stocks **and** crypto), optional LLM Long/Short/Neutral labels, and build **12‑month price charts** with clickable tweet markers — one PDF per month batch.
 
 ## Sample report output
