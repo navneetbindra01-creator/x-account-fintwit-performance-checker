@@ -6,11 +6,11 @@ Analyze FinTwit (finance Twitter/X) accounts: scrape tweets, extract tickers (st
 
 Each monthly batch writes a PDF with trader style, instruments, LLM Long/Short/Neutral counts, directional calls, and Yahoo price charts with tweet-date markers.
 
-### Overview page (crypto + equities account)
+### Overview page (commodities / equities)
 
-Example from `@Infinite__Sigma` — mixed `$ETH` / `$PEPE` / `$TAO` / `$SPCX` window:
+Example from `@RockBtmEntries` — ags, fertilizer, energy, and index mentions:
 
-![Sample report overview — Infinite__Sigma](docs/screenshots/report-summary-crypto.png)
+![Sample report overview — RockBtmEntries](docs/screenshots/report-summary-rockbtm.png)
 
 ### Overview page (equities / macro FinTwit)
 
@@ -20,15 +20,15 @@ Example from `@chessNwine`:
 
 ### 12-month charts with tweet markers
 
-Green / red / grey dots mark tweet dates on the daily close series (stocks and crypto).
+Green / red / grey dots mark tweet dates on the daily close series (stocks, commodities, and crypto when present).
 
-| Crypto (`$ETH`) | Equities (`$QQQ`) |
-|-----------------|-------------------|
-| ![ETH 12-month chart](docs/screenshots/report-chart-eth.png) | ![QQQ 12-month chart](docs/screenshots/report-chart-qqq.png) |
+| `$WEAT` | `$QQQ` |
+|---------|--------|
+| ![WEAT 12-month chart](docs/screenshots/report-chart-weat.png) | ![QQQ 12-month chart](docs/screenshots/report-chart-qqq.png) |
 
-Meme / alt crypto works the same way (Yahoo `-USD` series):
+Single-name equities (e.g. fertilizer):
 
-![PEPE 12-month chart](docs/screenshots/report-chart-pepe.png)
+![MOS 12-month chart](docs/screenshots/report-chart-mos.png)
 
 > Screenshots are rendered from real analysis JSON + chart SVGs produced by the tool. Re-generate with `node scripts/render-readme-shots.js` after new runs (requires local `output/` data and Chrome).
 
@@ -75,7 +75,7 @@ In that Chrome window, log into **x.com**, then leave it open (or close it after
 node analyze-account.js --account PeterLBrandt
 
 # Last 3 months, monthly PDFs, LLM Long/Short/Neutral
-node analyze-account.js --account Infinite__Sigma --period 3m --llm --max-scrolls 150
+node analyze-account.js --account RockBtmEntries --period 3m --llm --max-scrolls 150
 ```
 
 | Flag | Meaning |

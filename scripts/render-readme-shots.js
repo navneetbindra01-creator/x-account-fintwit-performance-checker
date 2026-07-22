@@ -253,13 +253,17 @@ async function main() {
   mkdirSync(outDir, { recursive: true });
   mkdirSync(tmpDir, { recursive: true });
 
-  const sigma = loadReport("Infinite__Sigma_batch1of3");
+  const rock = loadReport("RockBtmEntries_batch1of2");
   const chess = loadReport("chessNwine_batch1of3");
+  const rockChartDir = join(
+    root,
+    "output/charts/RockBtmEntries/2026-06-22_to_2026-07-22"
+  );
 
   const pages = [
     {
-      html: buildSummaryHtml(sigma),
-      file: "report-summary-crypto.png",
+      html: buildSummaryHtml(rock),
+      file: "report-summary-rockbtm.png",
       w: 900,
       h: 1220,
     },
@@ -271,22 +275,19 @@ async function main() {
     },
     {
       html: buildChartHtml(
-        join(
-          root,
-          "output/charts/Infinite__Sigma/2026-06-22_to_2026-07-22/ETH.svg"
-        ),
-        "$ETH · 12-month price with tweet markers",
-        "@Infinite__Sigma · batch 2026-06-22 → 2026-07-22 · Yahoo ETH-USD"
+        join(rockChartDir, "WEAT.svg"),
+        "$WEAT · 12-month price with tweet markers",
+        "@RockBtmEntries · batch 2026-06-22 → 2026-07-22 · Yahoo WEAT"
       ),
-      file: "report-chart-eth.png",
+      file: "report-chart-weat.png",
       w: 980,
       h: 580,
     },
     {
       html: buildChartHtml(
-        join(root, "output/charts/chessNwine/2026-06-22_to_2026-07-22/QQQ.svg"),
+        join(rockChartDir, "QQQ.svg"),
         "$QQQ · 12-month price with tweet markers",
-        "@chessNwine · batch 2026-06-22 → 2026-07-22 · Yahoo QQQ"
+        "@RockBtmEntries · batch 2026-06-22 → 2026-07-22 · Yahoo QQQ"
       ),
       file: "report-chart-qqq.png",
       w: 980,
@@ -294,14 +295,11 @@ async function main() {
     },
     {
       html: buildChartHtml(
-        join(
-          root,
-          "output/charts/Infinite__Sigma/2026-06-22_to_2026-07-22/PEPE.svg"
-        ),
-        "$PEPE · 12-month crypto chart with tweet markers",
-        "@Infinite__Sigma · Yahoo PEPE crypto series"
+        join(rockChartDir, "MOS.svg"),
+        "$MOS · 12-month price with tweet markers",
+        "@RockBtmEntries · Yahoo MOS (fertilizer / materials)"
       ),
-      file: "report-chart-pepe.png",
+      file: "report-chart-mos.png",
       w: 980,
       h: 580,
     },
@@ -315,8 +313,14 @@ async function main() {
     console.log("wrote", page.file);
   }
 
-  // cleanup blank test shots + tmp
-  for (const junk of ["page1.png", "chessNwine-summary.png"]) {
+  // cleanup obsolete / blank shots + tmp
+  for (const junk of [
+    "page1.png",
+    "chessNwine-summary.png",
+    "report-summary-crypto.png",
+    "report-chart-eth.png",
+    "report-chart-pepe.png",
+  ]) {
     try {
       rmSync(join(outDir, junk), { force: true });
     } catch {}
