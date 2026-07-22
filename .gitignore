@@ -1,0 +1,35 @@
+# Secrets — never commit real keys
+.env
+.env.local
+.env.*.local
+
+# Dependencies
+node_modules/
+
+# Browser profiles (login sessions, cookies — do not commit)
+chrome-manual-profile/
+chrome-debug-profile/
+edge-debug-profile/
+
+# Generated reports & caches
+output/
+debug/
+last-results.json
+*.pdf
+charts/
+
+# Tesseract trained data (downloaded at runtime)
+eng.traineddata
+*.traineddata
+
+# OS / editor
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.log
+.vscode/
+.idea/
+
+# Locks from browser profiles (if any slip through)
+Singleton*
+Lockfile

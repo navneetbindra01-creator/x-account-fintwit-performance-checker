@@ -1,0 +1,23 @@
+{
+  "name": "x-account-fintwit-performance-checker",
+  "version": "1.2.0",
+  "private": true,
+  "description": "X Account Fintwit performance checker — scrape FinTwit accounts, tickers (stocks+crypto), optional LLM sides, 12-month charts, monthly PDFs",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/navneetbindra01-creator/x-account-fintwit-performance-checker.git"
+  },
+  "scripts": {
+    "start": "node run-search.js",
+    "start-chrome": "start-chrome.cmd",
+    "search": "node search-x.js",
+    "analyze": "node analyze-account.js",
+    "analyze:brandt": "node analyze-account.js --account PeterLBrandt --period 3m"
+  },
+  "dependencies": {
+    "pdfkit": "^0.19.1",
+    "playwright": "^1.49.0",
+    "tesseract.js": "^7.0.0"
+  }
+}
