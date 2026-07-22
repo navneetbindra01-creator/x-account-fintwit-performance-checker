@@ -2,6 +2,36 @@
 
 Analyze FinTwit (finance Twitter/X) accounts: scrape tweets, extract tickers (stocks **and** crypto), optional LLM Long/Short/Neutral labels, and build **12‑month price charts** with clickable tweet markers — one PDF per month batch.
 
+## Sample report output
+
+Each monthly batch writes a PDF with trader style, instruments, LLM Long/Short/Neutral counts, directional calls, and Yahoo price charts with tweet-date markers.
+
+### Overview page (crypto + equities account)
+
+Example from `@Infinite__Sigma` — mixed `$ETH` / `$PEPE` / `$TAO` / `$SPCX` window:
+
+![Sample report overview — Infinite__Sigma](docs/screenshots/report-summary-crypto.png)
+
+### Overview page (equities / macro FinTwit)
+
+Example from `@chessNwine`:
+
+![Sample report overview — chessNwine](docs/screenshots/report-summary-equities.png)
+
+### 12-month charts with tweet markers
+
+Green / red / grey dots mark tweet dates on the daily close series (stocks and crypto).
+
+| Crypto (`$ETH`) | Equities (`$QQQ`) |
+|-----------------|-------------------|
+| ![ETH 12-month chart](docs/screenshots/report-chart-eth.png) | ![QQQ 12-month chart](docs/screenshots/report-chart-qqq.png) |
+
+Meme / alt crypto works the same way (Yahoo `-USD` series):
+
+![PEPE 12-month chart](docs/screenshots/report-chart-pepe.png)
+
+> Screenshots are rendered from real analysis JSON + chart SVGs produced by the tool. Re-generate with `node scripts/render-readme-shots.js` after new runs (requires local `output/` data and Chrome).
+
 ## Features
 
 - **Logged-in scrape** via Chrome remote debugging (you log in once; no automated password login)
